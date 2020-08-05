@@ -6,8 +6,8 @@ services:
     image: postgres
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
-    environment:
-      POSTGRES_PASSWORD: password
+    env_file:
+      - .env/development/db
   web:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
@@ -15,5 +15,8 @@ services:
       - .:/myapp
     ports:
       - "3000:3000"
+    env_file:
+      - .env/development/db
+      - .env/development/web
     depends_on:
       - db
