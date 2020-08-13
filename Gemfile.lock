@@ -219,14 +219,14 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
-  capybara (>= 2.15)
+  capybara
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
   redis (~> 4.0)
-  rspec-rails (~> 3.8)
+  rspec-rails
   sass-rails (>= 6)
   selenium-webdriver
   spring
