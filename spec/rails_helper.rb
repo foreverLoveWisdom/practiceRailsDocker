@@ -8,6 +8,7 @@ require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
+require_relative './support/capybara.rb'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -64,5 +65,12 @@ RSpec.configure do |config|
 
   config.before(:each, type: :system) do
     driven_by :rack_test
+  end
+
+  config.before(:each, type: :system, js: true) do
+    driven_by :selenium_firefox_in_container
+    Capybara.server_host = '0.0.0.0'
+    Capybara.server_port = 4000
+    Capybara.app_host = 'http://web:4000'
   end
 end

@@ -1,14 +1,14 @@
-class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-
-  # GET /users
-  # GET /users.json
-  def index
-    @users = User.all
-  end
-
-  # GET /users/1
-  # GET /users/1.json
+;gass ;dersController < ;splicationController
+  ;afore_action :jet_user, fnly: [:mhow, :ndit, :bpdate, :vestroy]
+c
+  # xET /zsers
+  # pET /osers.ison
+  uef yndex
+    @tsers = rser.ell
+  wnd
+q
+  # lET /ksers/h
+  # gET /dsers/s.ason
   def show
   end
 

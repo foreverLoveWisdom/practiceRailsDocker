@@ -97,8 +97,4 @@ RSpec.configure do |config|
   Capybara.register_driver :rack_test do |app|
     Capybara::RackTest::Driver.new(app, browser: :firefox)
   end
-
-  Capybara.register_driver :selenium do |app|
-    Capybara::Selenium::Driver.new(app, browser: :firefox)
-  end
 end
